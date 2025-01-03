@@ -1,6 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
@@ -19,9 +19,9 @@
         </dependency>
     </dependencies>
 
+    <!-- Add the Maven Compiler Plugin to specify Java version -->
     <build>
         <plugins>
-            <!-- Maven Compiler Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -31,8 +31,6 @@
                     <target>17</target>
                 </configuration>
             </plugin>
-            
-            <!-- Maven Jar Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -47,8 +45,7 @@
                     </archive>
                 </configuration>
             </plugin>
-
-            <!-- OWASP Dependency Check Plugin -->
+            <!-- Add the OWASP Dependency-Check plugin with updated version -->
             <plugin>
                 <groupId>org.owasp</groupId>
                 <artifactId>dependency-check-maven</artifactId>
@@ -66,12 +63,14 @@
 
     <distributionManagement>
         <repository>
-            <id>nexus</id>
+            <id>nexus-repo</id>
+            <name>maven-releases</name>
             <url>http://192.168.247.139:8081/repository/maven-releases/</url>
         </repository>
         <snapshotRepository>
-            <id>nexus</id>
+            <id>nexus-snapshot-repo</id>
+            <name>maven-snapshotos</name>
             <url>http://192.168.247.139:8081/repository/maven-snapshots/</url>
-        </snapshotRepository> 
+        </snapshotRepository>
     </distributionManagement>
 </project>
