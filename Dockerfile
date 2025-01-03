@@ -15,7 +15,7 @@ WORKDIR /app
 COPY target/my-app-1.0-SNAPSHOT.jar /app/app.jar
 
 # Expose the necessary port (if needed for web apps)
-EXPOSE 8080
+EXPOSE 8081
 
 # Run the JAR file
 ENTRYPOINT ["java", "-jar", "/app/app.jar"]
