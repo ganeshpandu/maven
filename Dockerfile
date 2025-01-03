@@ -18,4 +18,4 @@ COPY target/my-app-1.0-SNAPSHOT.jar /app/app.jar
 EXPOSE 8080
 
 # Run the JAR file
-CMD ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]
